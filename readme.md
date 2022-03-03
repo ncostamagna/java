@@ -18,3 +18,54 @@ export PATH=${JAVA_HOME=}/bin:${PATH}
 Instalamos un eclipse de spring, que ya viene con todo<br />
 https://spring.io/tools <br />
 Viene con maven instalado
+
+# Project
+- new spring project
+- dependencias:  web - spring web
+- templates - thymelaf
+- developer - spring boot devtools
+
+Si marca algun error por las dependencias, deberiamos borrar el folder .m2 (maven) en el root del user.< br/>
+Luego actualizamos en el proyecto (maven - Update project)<br />
+
+Para importar: import - exists maven project
+
+# Spring Boot
+
+## Main
+El main corre en SpringBootWebApplication.java
+```java
+package com.bolsadeideas.springboot.web.app;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class SpringBootWebApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(SpringBootWebApplication.class, args);
+	}
+
+}
+```
+
+## Resource
+Tenemos la configuracion principal de spring, podemos cambiar todo lo que viene por defecto<br />
+application.properties
+```java
+//cambiar el puerto, tener cuidado de no poner espacios en blanco
+server.port=8090
+```
+
+## Controller
+Cada controlador debe llevar el nombre **Controller**, ejemplo **HomeController**
+
+## Ejecucion
+Run As - Spring Boot App
+<br />
+Una vez que esta levantada, no volvemos volver a levantarla, solo debemos reiniciar
+
+# Maven
+Nos ayuda a descargar las dependencias, con el archivo **pom.xml**<br />
+
