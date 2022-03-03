@@ -66,6 +66,16 @@ Run As - Spring Boot App
 <br />
 Una vez que esta levantada, no volvemos volver a levantarla, solo debemos reiniciar
 
+## Deploy
+vamos a la terminal y ejecutamos el comando del archivo mvnw<br />
+Acordarse de configurar JAVA_HOME
+```sh
+./mvnw package # generamos nuetro proyecto
+
+# corremos el jar
+java -jar ./target/spring-boot-web-1-0.0.1-SNAPSHOT.jar
+```
+
 # Maven
 Nos ayuda a descargar las dependencias, con el archivo **pom.xml**<br />
 
