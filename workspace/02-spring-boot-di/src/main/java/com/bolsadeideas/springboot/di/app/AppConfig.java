@@ -16,7 +16,7 @@ import com.bolsadeideas.springboot.di.app.models.service.MiServicioComplejo;
 @Configuration
 public class AppConfig {
 	
-	@Bean("miServicioSimple")
+	@Bean("miServicioSimple") // lo metemos al contenedor de spring
 	@Primary
 	public IServicio registrarMiServicio() {
 		return new MiServicio();

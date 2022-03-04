@@ -79,3 +79,38 @@ java -jar ./target/spring-boot-web-1-0.0.1-SNAPSHOT.jar
 # Maven
 Nos ayuda a descargar las dependencias, con el archivo **pom.xml**<br />
 
+# Servicios
+Cuando trabajamos con aplicaciones web, las capas como Service, Controller, Repository, etc.. Siempre es
+mejor manejarlas con inyeccion de dependencias, nunca usar el **new**<br />
+<img href="images/1.png">
+
+## Beans
+Nos permite crear y manejar objetos en el contenedor de spring, registrarlos en el contenedor
+
+## Scope
+
+### Singletor
+Hay una instancia en toda la aplicacion. Controller, Service, Repository son singletor, no deberian manejar estados, como por ejemplo usuario, otro usuario podria modificar el valor.
+
+
+### Request
+@RequestScope va a durar lo que dura una peticion HTTP
+
+### Session
+@SessionScope cuando trabajamos con sessiones, se destruye cuando cerremos el navegador
+
+### Application
+Muy parecido al Singletor pero se guarda en el application context de string, en una aplicacion podriamos tener mas de un application context (no es singletor), lo normal es usar un serverless context por defecto
+
+## Serializable
+Cualquier objeto que queramos guardar en una clase HTTP debe implementar Serializable, cuando se transporta se guardan en un contexto de persistencia, convierte el objeto en una secuencia de bytes, y luego se va a restaurar en un objeto de java
+
+```java
+public class Factura implements Serializable{
+
+	// identificador de la serializacion, lo maneja por debajo
+	private static final long serialVersionUID = 946004357128146951L;
+
+}
+
+```

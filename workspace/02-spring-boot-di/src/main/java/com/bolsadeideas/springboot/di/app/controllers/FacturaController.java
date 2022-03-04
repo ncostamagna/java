@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.bolsadeideas.springboot.di.app.models.domain.Factura;
 
-@Controller
+// Con
+@Controller 
 @RequestMapping("/factura")
 public class FacturaController {
 	

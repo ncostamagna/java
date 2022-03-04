@@ -11,6 +11,7 @@ import com.bolsadeideas.springboot.di.app.models.service.IServicio;
 @Controller
 public class IndexController {
 	
+	// Inyectamos con @Autowired
 	@Autowired
 	@Qualifier("miServicioComplejo")
 	private IServicio servicio;

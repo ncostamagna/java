@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.context.annotation.RequestScope;
 
 @Component
-@RequestScope
+@RequestScope // va a durar lo que dura una peticion HTTP
 public class Factura implements Serializable{
 
 	private static final long serialVersionUID = 946004357128146951L;
@@ -23,15 +23,18 @@ public class Factura implements Serializable{
 	@Autowired
 	private Cliente cliente;
 	
+	// Lo cargamos en config
 	@Autowired
 	private List<ItemFactura> items;
 	
+	// ejecucion luego del contructor
 	@PostConstruct
 	public void inicializar() {
 		cliente.setNombre(cliente.getNombre().concat(" ").concat("José"));
 		descripcion = descripcion.concat(" del cliente: ").concat(cliente.getNombre());
 	}
 	
+	// antes de ser destruida, en este caso como es singletor, se va a ver cuando se baje el server
 	@PreDestroy
 	public void destruir() {
 		System.out.println("Factura destruida: ".concat(descripcion));
