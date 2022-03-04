@@ -82,7 +82,7 @@ Nos ayuda a descargar las dependencias, con el archivo **pom.xml**<br />
 # Servicios
 Cuando trabajamos con aplicaciones web, las capas como Service, Controller, Repository, etc.. Siempre es
 mejor manejarlas con inyeccion de dependencias, nunca usar el **new**<br />
-<img href="images/1.png">
+<img src="images/1.png"/>
 
 ## Beans
 Nos permite crear y manejar objetos en el contenedor de spring, registrarlos en el contenedor
